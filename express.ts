@@ -1,4 +1,4 @@
-import express from "express"
+import express, {Request,Response} from "express"
 import cors from "cors"
 
 const app = express()
@@ -6,7 +6,9 @@ app.use(express.json())
 app.use(cors())
 
 
-
+app.get("/", (req:Request,res:Response) => {
+    res.send("Hello Typescript")
+})
 
 app.listen(5005,()=> {
     console.log("http://localhost:5000")
